@@ -1,7 +1,7 @@
 module.exports = {
   apps: [
     {
-      name: "ci-cd-app",
+      name: `ci-cd | ${process.env.NODE_ENV}`,
       script: "dist/main.js",
       instances: 1,
       exec_mode: "fork",
