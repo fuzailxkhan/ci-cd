@@ -47,5 +47,5 @@ jobs:
             npm run build
 
             echo "🚀 Restarting PM2"
-            pm2 restart nest-staging || pm2 start dist/main.js --name nest-staging
+            pm2 reload ecosystem.config.js || pm2 start ecosystem.config.js
             pm2 save
