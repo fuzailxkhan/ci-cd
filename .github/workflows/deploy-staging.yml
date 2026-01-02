@@ -46,6 +46,9 @@ jobs:
             echo "🏗 Building app"
             npm run build
 
-            echo "🚀 Restarting PM2 via ecosystem.confi.js staging"
+            echo "Exporting NODE_ENV Variable for ecosystem.config.js file"
+            export NODE_ENV=staging
+            
+            echo "🚀 Restarting PM2 via ecosystem.config.js staging"
             pm2 reload ecosystem.config.js --env staging || pm2 start ecosystem.config.js --env staging
             pm2 save
